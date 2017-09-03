@@ -1,12 +1,40 @@
 source "https://rubygems.org"
 
-gem "sinatra", "1.4.6"
+# A rails-like sinatra environment with ActiveRecord, Rake, and ActiveSupport
+gem "sinatra", "2.0.0"
+gem "sinatra-activerecord", "~> 2.0"
+gem "rake"
+gem "activesupport"
 
+# We'll use Postgres in all environments
 gem "pg"
 
-gem "rake"
-gem "sinatra-activerecord", "~> 2.0"
+# Composing JSON views
+gem "rabl"
+
+# Pagination for API views
+gem "will_paginate", "~> 3.0.6"
+
+# Assists console access
+gem "rb-readline"
+
+# Beter API behavior, including passing form data to params
+gem "rack-contrib"
+
+group :development do
+	# Auto-reloading server for development work
+	gem "shotgun"
+end
 
 group :development, :test do
-	gem "shotgun"
+	# For rspec tests
+	gem "rspec"
+	gem "pry"
+end
+
+group :test do
+	# For rspec tests
+	gem "factory_girl"
+	gem "database_cleaner"
+	gem "rack-test"
 end
