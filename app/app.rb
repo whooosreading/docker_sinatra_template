@@ -4,12 +4,31 @@ require "json"
 require "rabl"
 require "will_paginate"
 require "will_paginate/active_record"
+require "rack/contrib"
+require "logger"
+
+configure do
+	set :environments, %w{development test production staging}
+end
+
+configure :development do
+	disable :show_exceptions
+end
+
 
 ["./lib/models/*.rb", "./lib/utility/*.rb", "./lib/domain/*.rb", 
 	"./config/initializers/*.rb"].each do |pattern|
 	Dir[pattern].each do |file|
 		require file
 	end
+end
+
+use Rack::PostBodyContentTypeParser
+
+if !Sinatra::Application.test?
+	ActiveRecord::Base.logger = nil
+	use Rack::JSONLogger
+	$stdout.sync = true
 end
 
 ##############################
