@@ -40,7 +40,7 @@ def controller_embed?(*keys)
 end
 
 def strong_params(key, permitted)
-	data = params[key].to_h
+	data = params[key].to_h.with_indifferent_access
 	Hash[permitted.map do |attribute|
 		if data.has_key?(attribute.to_sym) || data.has_key?(attribute.to_s)
 			[attribute, data[attribute]]
