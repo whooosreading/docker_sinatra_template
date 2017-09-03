@@ -1,1 +1,1 @@
-# docker_sinatra_template
+# Docker/Sinatra Template

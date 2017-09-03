@@ -1,0 +1,28 @@
+db:
+  image: postgres
+  environment:
+    - POSTGRES_USER=sinatra_role
+    - POSTGRES_PASSWORD=devpassword
+  # ports:
+  #   - "5432:5432"
+
+  restart: always
+  volumes:
+    - ./volumes/postgres-data:/var/lib/postgresql/data
+
+
+app:
+  build: .
+  command: bundle exec shotgun app.rb -o 0.0.0.0
+  ports:
+    - "4567:9393"
+  links:
+    - "db"
+  volumes:
+    - ./app:/home/app/webapp
+    - bundle:/bundle
+  environment:
+    - DATABASE_HOST=db
+    - DATABASE_NAME=sinatra
+    - DATABASE_USER=sinatra_role
+    - DATABASE_PASSWORD=devpassword

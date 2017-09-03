@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  port: 5432
+
+  host: <%= ENV["DATABASE_HOST"] || "db" %>
+  username: <%= ENV["DATABASE_USER"] || "sinatra_role" %>
+  password: <%= ENV["DATABASE_PASSWORD"] || "foobar1" %>
+
+production:
+  <<: *default
+  database: "my_custom_production_db_name"
+
+development:
+  <<: *default
+  database: "dev_db"
+
+test:
+  <<: *default
+  host: "db"
+  database: "test_db"

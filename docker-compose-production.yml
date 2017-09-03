@@ -1,0 +1,12 @@
+app:
+  build: .
+  ports:
+    - "4567:80"
+  volumes:
+    - ./app:/home/app/webapp
+    - bundle:/bundle
+  environment:
+    - DATABASE_HOST=db
+    - DATABASE_NAME=sinatra
+    - DATABASE_USER=sinatra_role
+    - DATABASE_PASSWORD=foobar1
