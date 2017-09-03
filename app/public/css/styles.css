@@ -1,0 +1,66 @@
+html, body {
+	margin: 0;
+	font-family: sans-serif;
+	color: #555;
+}
+
+h1 {
+	font-style: bold;
+	text-align: center;
+	margin-top: 50px;
+	font-size: 30pt;
+}
+
+.container {
+	position: relative;
+	width: 970px;
+	max-width: 100%;
+
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+
+
+.buttonPrimary {
+    color: #fff;
+    background-color: #00a0f4;
+    border: 1px solid #0082c8;
+    padding: 6px 12px;
+    font-size: 1em;
+    border-radius: 5px;
+}
+.buttonPrimary:hover {
+	color: #fff;
+	background-color: #006faa;
+	border-color: #005683;
+}
+
+.buttonDefault {
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #CCC;
+    padding: 6px 12px;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.buttonDefault:hover {
+	color: #555;
+	background-color: #eeeeee;
+	border-color: #aaaaaa;
+}
+
+.buttonSuccess {
+	color: #fff;
+	background-color: #237600;
+	border: 1px solid $green-vvd;
+    padding: 6px 12px;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.buttonSuccess:hover {
+	color: #fff;
+	background-color: #237600;
+	border-color: #195500;
+}

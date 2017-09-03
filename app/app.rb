@@ -11,9 +11,21 @@ require "will_paginate/active_record"
 	end
 end
 
+##############################
+# Basic Views ################
+##############################
+
 get "/" do
-	{ body: "Hello World!" }.to_json
+	erb :home, views: "views"
 end
+
+get "/info" do
+	"Docker-Sinatra Template - by Whooo's Reading!"
+end
+
+##############################
+# API Routes #################
+##############################
 
 get "/foos" do
 	load_pagination
