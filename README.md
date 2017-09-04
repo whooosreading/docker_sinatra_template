@@ -25,6 +25,7 @@ The templates comes with a REST resource, Foo, which should probably be edited o
 - Unit spec for Foo at `app/spec/models/foo_spec.rb`
 - API spec for all REST Routes at `app/spec/web/api_v1/foo_api_spec.rb`
 - FactoryGirl factor for Foo in `app/spec/factories.rb`
+- A sample rake task in `lib/tasks/count_foo.rake`
 
 ## Other things to customize
 
