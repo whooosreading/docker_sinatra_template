@@ -20,7 +20,7 @@ describe "Foo API" do
 			rsp.should be_ok
 		end
 
-		it "| Search for a user's responses" do
+		it "| Search for all foos" do
 			get "/api/v1/foos"
 
 			body = JSON.parse(last_response.body)
@@ -36,15 +36,15 @@ describe "Foo API" do
 		end
 
 		it "| Pagination" do
-			get "/api/v1/foos?user_id=876&page=1&per_page=2"
+			get "/api/v1/foos?page=1&per_page=2"
 			body = JSON.parse(last_response.body)
 			body["foos"].length.should == 2
 
-			get "/api/v1/foos?user_id=876&page=2&per_page=2"
+			get "/api/v1/foos?page=2&per_page=2"
 			body = JSON.parse(last_response.body)
 			body["foos"].length.should == 1
 
-			get "/api/v1/foos?user_id=876&page=3&per_page=2"
+			get "/api/v1/foos?page=3&per_page=2"
 			body = JSON.parse(last_response.body)
 			body["foos"].length.should == 0
 		end
