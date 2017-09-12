@@ -1,0 +1,1 @@
+docker-compose run app bundle exec irb -r ./app.rb

@@ -10,7 +10,7 @@ default: &default
 
 production:
   <<: *default
-  database: "my_custom_production_db_name"
+  database: "<%= ENV["DATABASE_NAME"] || "elizabeth_db" %>"
 
 development:
   <<: *default

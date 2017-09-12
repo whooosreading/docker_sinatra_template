@@ -1,12 +1,21 @@
-app:
-  build: .
-  ports:
-    - "4567:80"
-  volumes:
-    - ./app:/home/app/webapp
-    - bundle:/bundle
-  environment:
-    - DATABASE_HOST=db
-    - DATABASE_NAME=sinatra
-    - DATABASE_USER=sinatra_role
-    - DATABASE_PASSWORD=foobar1
+version: '3.3'
+services:
+  elizabeth:
+    image: whooosreading/elizabeth
+    ports:
+      - "80:80"
+    environment:
+      # IMPORTANT! docker/app-env.conf needs to be told about all these
+      #   If they're going to make it to the web app
+      - "DATABASE_HOST=${DATABASE_HOST}"
+      - "DATABASE_USER=${DATABASE_ROLE}"
+      - "DATABASE_PASSWORD=${DATABASE_PASSWORD}"
+      - "DATABASE_NAME=custom_production_db_name"
+
+      # These are for other tasks and don't need to be carried through
+      # And some maybe are redundant
+      - "RACK_ENV=production"
+      - "APP_ENV=production"
+      - "PASSENGER_APP_ENV=production"
+
+    restart: unless-stopped

@@ -11,6 +11,7 @@ Starting template for a containerized microservice with application of the follo
 - Phusion Passenger & NGINX for production use
 - Shotgun, an autoreloading server, for development user
 - Customizations such as a JSON logging system, embedable API resources, strong parameters, and a wrapper to generate 404 errors from ActiveRecord Errors
+- Convenience scripts for starting the app, view logs, pushing to Docker hub, and other tasks
 
 ## A default resource: Foo
 
@@ -32,6 +33,9 @@ The templates comes with a REST resource, Foo, which should probably be edited o
 - `get "/info"` in `app/app.rb` should return text indentifying the app
 - `app/views/home.erb` should be customized 
 - The `title` tag should be customized in `app/views/layout.erb` (potentially the favicon as well)
+- References to `username/appname` or `appname` in `script/*`
+- Names of environment variables in docker-compose-production.yml
+- Port mapping in both docker-compose files
 
 ## Commands
 

@@ -9,6 +9,10 @@ require "logger"
 
 configure do
 	set :environments, %w{development test production staging}
+
+	# I'm never sure which of these work in which context...
+	set :method_override, true
+	use Rack::MethodOverride
 end
 
 configure :development do
