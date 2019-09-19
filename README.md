@@ -62,3 +62,8 @@ To run rspec tests
 ```
 docker-compose run app bundle exec rspec spec
 ```
+
+## License
+
+Docker/Sinatra Template is distributed under the terms of the [MIT license](http://opensource.org/licenses/MIT) ([LICENSE](./LICENSE)).
+
