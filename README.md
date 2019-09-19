@@ -12,6 +12,7 @@ Starting template for a containerized microservice with application of the follo
 - Shotgun, an autoreloading server, for development user
 - Customizations such as a JSON logging system, embedable API resources, strong parameters, and a wrapper to generate 404 errors from ActiveRecord Errors
 - Convenience scripts for starting the app, view logs, pushing to Docker hub, and other tasks
+- NewRelic configuration, because NewRelic is amazing! (Even the free plan.)
 
 ## A default resource: Foo
 
@@ -36,6 +37,9 @@ The templates comes with a REST resource, Foo, which should probably be edited o
 - References to `username/appname` or `appname` in `script/*`
 - Names of environment variables in docker-compose-production.yml
 - Port mapping in both docker-compose files
+- NewRelic:
+  - Customize `app/config/newrelic.yml` and uncomment the require in `app/config/newrelic_rpm`; OR
+  - Remove that file, comment out the newrelic_rpm gem in the production group, and remove the commented-out require in `app/config/newrelic_rpm`
 
 ## Commands
 

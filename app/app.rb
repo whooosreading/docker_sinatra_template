@@ -6,6 +6,7 @@ require "will_paginate"
 require "will_paginate/active_record"
 require "rack/contrib"
 require "logger"
+# require "newrelic_rpm"
 
 configure do
 	set :environments, %w{development test production staging}
@@ -18,7 +19,6 @@ end
 configure :development do
 	disable :show_exceptions
 end
-
 
 ["./lib/models/*.rb", "./lib/utility/*.rb", "./lib/domain/*.rb", 
 	"./config/initializers/*.rb"].each do |pattern|

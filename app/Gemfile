@@ -21,6 +21,9 @@ gem "rb-readline"
 # Beter API behavior, including passing post body data to params
 gem "rack-contrib"
 
+# Remove this if you're not going to use NewRelic
+gem "newrelic_rpm"
+
 group :development do
 	# Auto-reloading server for development work
 	gem "shotgun"
