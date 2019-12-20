@@ -23,6 +23,7 @@ GEM
     method_source (0.8.2)
     minitest (5.10.3)
     mustermann (1.0.1)
+    newrelic_rpm (6.7.0.359)
     pg (0.21.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -30,7 +31,7 @@ GEM
       slop (~> 3.4)
     rabl (0.13.1)
       activesupport (>= 2.3.14)
-    rack (2.0.3)
+    rack (2.0.8)
     rack-contrib (1.2.0)
       rack (>= 0.9.1)
     rack-protection (2.0.0)
@@ -82,6 +83,7 @@ DEPENDENCIES
   activesupport
   database_cleaner
   factory_girl
+  newrelic_rpm
   pg
   pry
   rabl
