@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # A rails-like sinatra environment with ActiveRecord, Rake, and ActiveSupport
-gem "sinatra", "2.0.0"
+gem "sinatra", "2.2.3"
 gem "sinatra-activerecord", "~> 2.0"
 gem "rake"
 gem "activesupport"
